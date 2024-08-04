@@ -2,6 +2,8 @@ FROM python:3.9-slim
 WORKDIR /app
 COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python train_and_save_model.py
+RUN python model_v2.py
 EXPOSE 5000
-CMD ["python", "app.py"]
+EXPOSE 8000
+RUN chmod +x dualhost.sh
+CMD ["./dualhost.sh"]

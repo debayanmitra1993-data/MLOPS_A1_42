@@ -53,10 +53,10 @@ jobs:
       - name: Test Flask app endpoints
         run: |
           echo "Testing /train endpoint..."
-          curl -s http://localhost:5000/train
+          curl -s http://localhost:8000/train
           
           echo "Testing /evaluate endpoint..."
-          curl -s http://localhost:5000/evaluate
+          curl -s http://localhost:8000/evaluate
           
           echo "Testing /predict endpoint..."
-          curl -s -X POST -H "Content-Type: application/json" -d '{"input": [5.1, 3.5, 1.4, 0.2]}' http://localhost:5000/predict
+          curl -s -X POST -H "Content-Type: application/json" -d '{"input": [5.1, 3.5, 1.4, 0.2]}' http://localhost:8000/predict

@@ -95,4 +95,5 @@ def evaluate_saved_svm():
     return evaluate_model(model)
 
 if __name__ == '__main__':
-    run_svm_experiment()
+    best_mdl_results = run_svm_experiment()
+    print("Best SVM Model results = ",best_mdl_results)

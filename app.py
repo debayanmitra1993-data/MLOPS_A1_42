@@ -3,12 +3,13 @@ from sklearn.datasets import load_iris
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import cross_val_score
 import numpy as np
+import joblib
+from model_v2 import run_svm_experiment
 
 app = Flask(__name__)
 
-# Global variable to store the trained model
-model = None
-
+# model = None
+model = joblib.load('./models/best_svm_model.pkl')
 
 def train_model():
     """Train a DecisionTreeClassifier on the Iris dataset."""
@@ -61,5 +62,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    train_model()
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8000)
