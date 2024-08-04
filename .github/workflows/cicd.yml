@@ -1,0 +1,21 @@
+name: MLOPS G42 CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull request:
+    branches : [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install flake8
+      - name: Lint code by running Flake8
+        run: flake8 .
