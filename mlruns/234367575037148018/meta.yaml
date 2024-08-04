@@ -1,6 +1,0 @@
-artifact_location: file:///Users/debayanmitra/Downloads/MLOPS_A1_42/mlruns/234367575037148018
-creation_time: 1722805168150
-experiment_id: '234367575037148018'
-last_update_time: 1722805168150
-lifecycle_stage: active
-name: MLflow DVC Integration Experiment
