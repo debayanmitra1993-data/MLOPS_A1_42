@@ -33,7 +33,7 @@ def train_svm():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, )
     np.savetxt('./data_dvc/X_train.csv', X_train, delimiter=',', fmt='%d')
     np.savetxt('./data_dvc/y_train.csv', y_train, delimiter=',', fmt='%d')
-    return
+    
     param_grid = {
         'C': [0.1, 1, 10, 100],
         'gamma': [1, 0.1, 0.01, 0.001],
@@ -95,7 +95,4 @@ def evaluate_saved_svm():
     return evaluate_model(model)
 
 if __name__ == '__main__':
-    #pass
-    train_svm()
-    # ev = run_svm_experiment()
-    # print(ev)
+    run_svm_experiment()
