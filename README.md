@@ -10,7 +10,7 @@ To run on your local machine -> execute the **./run_local.sh** (ensure you set *
 
 **TESTS** -> contains unit tests as part of Test along with Lint & Deploy in Github actions in .github/workflows
 
-**cicd.yml** -> contains the config file for CI/CD for all 3 parts - lint, test and deploy. Used Github actions to perform the same
+**./github/workflows/cicd.yml** -> contains the config file for CI/CD for all 3 parts - lint, test and deploy. Used Github actions to perform the same
 
 **Dockerfile** -> Trains the Model , Exposes 5000 and 8000 ports to host MLFLOW UI and FLASK application respectively
 
