@@ -6,4 +6,4 @@ echo "Building Docker image..."
 docker build -t $IMAGE_NAME .
 
 echo "Running Docker container..."
-docker run -d -p 5000:500 -p 8000:8000 $IMAGE_NAME
+docker run -d -p 5000:5000 -p 8000:8000 $IMAGE_NAME
