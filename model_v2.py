@@ -31,8 +31,8 @@ def evaluate_model(model):
 def train_svm():
     """Train an SVM using GridSearchCV on the dataset."""
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-    np.savetxt('X_train.csv', X_train, delimiter=',', fmt='%d')
-    np.savetxt('y_train.csv', y_train, delimiter=',', fmt='%d')
+    np.savetxt('./data_dvc/X_train.csv', X_train, delimiter=',', fmt='%d')
+    np.savetxt('./data_dvc/y_train.csv', y_train, delimiter=',', fmt='%d')
     return
     param_grid = {
         'C': [0.1, 1, 10, 100],
