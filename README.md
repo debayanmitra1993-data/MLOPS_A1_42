@@ -8,7 +8,7 @@ Use Localhost:5000 for viewing the MLFLOW UI
 Use Localhost:8000/predict for Model Prediction API
 
 **CuRL**
-curl -s -X POST -H "Content-Type: application/json" -d '{"input": [5.1, 3.5, 1.4, -1000000.2]}' http://localhost:8000/predict
+curl -s -X POST -H "Content-Type: application/json" -d '{"input": [5.1, 3.5, 1.4, 2.2]}' http://localhost:8000/predict
 
 **CODEBASE**
 
