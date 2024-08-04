@@ -2,4 +2,4 @@
 # Start the Flask application
 python app.py &
 # Start the MLflow UI
-mlflow ui --host 0.0.0.0 --port 5000
+mlflow ui --host 127.0.0.1 --port 5000
