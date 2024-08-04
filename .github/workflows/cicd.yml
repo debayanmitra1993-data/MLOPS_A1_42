@@ -3,7 +3,7 @@ name: MLOPS G42 CI/CD
 on:
   push:
     branches: [main]
-  pull request:
+  pull_request:
     branches : [main]
 
 jobs:
