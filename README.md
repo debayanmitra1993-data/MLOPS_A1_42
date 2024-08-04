@@ -1,6 +1,14 @@
 Welcome to our MLOPS project (Group 42)
 
+**RUN**
 To run on your local machine -> execute the **./run_local.sh** (ensure you set **chmod +x ./run_local.sh**). This hosts flask IRIS predict end point on 8000 port and mlflow UI on 5000 port and contanerizes the Docker image build
+
+**USAGE**
+Use Localhost:5000 for viewing the MLFLOW UI
+Use Localhost:8000/predict for Model Prediction API
+
+**CuRL**
+curl -s -X POST -H "Content-Type: application/json" -d '{"input": [5.1, 3.5, 1.4, -1000000.2]}' http://localhost:8000/predict
 
 **CODEBASE**
 
