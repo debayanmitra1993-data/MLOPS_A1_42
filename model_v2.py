@@ -15,7 +15,7 @@ def train_decision_tree():
     """Train a DecisionTreeClassifier on the dataset."""
     model = DecisionTreeClassifier()
     model.fit(X, y)
-    joblib.dump(model, 'decision_tree_model.pkl')
+    joblib.dump(model, './models/decision_tree_model.pkl')
     return model
 
 # Function to evaluate a model using cross-validation
@@ -43,7 +43,7 @@ def train_svm():
     grid_search.fit(X_train, y_train)
     
     best_model = grid_search.best_estimator_
-    joblib.dump(best_model, 'best_svm_model.pkl')
+    joblib.dump(best_model, './models/best_svm_model.pkl')
     return best_model
 
 # Function to run Decision Tree experiment
@@ -84,12 +84,12 @@ def run_svm_experiment():
 
 # Function to evaluate a saved DecisionTreeClassifier
 def evaluate_saved_decision_tree():
-    model = joblib.load('decision_tree_model.pkl')
+    model = joblib.load('./models/decision_tree_model.pkl')
     return evaluate_model(model)
 
 # Function to evaluate a saved SVM model
 def evaluate_saved_svm():
-    model = joblib.load('best_svm_model.pkl')
+    model = joblib.load('./models/best_svm_model.pkl')
     return evaluate_model(model)
 
 if __name__ == '__main__':
