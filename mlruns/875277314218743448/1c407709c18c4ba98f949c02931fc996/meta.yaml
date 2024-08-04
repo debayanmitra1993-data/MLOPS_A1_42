@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/debayanmitra/Downloads/MLOPS_A1_42/mlruns/875277314218743448/1c407709c18c4ba98f949c02931fc996/artifacts
+end_time: 1722804352133
+entry_point_name: ''
+experiment_id: '875277314218743448'
+lifecycle_stage: active
+run_id: 1c407709c18c4ba98f949c02931fc996
+run_name: SVM Experiment
+run_uuid: 1c407709c18c4ba98f949c02931fc996
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722804348861
+status: 3
+tags: []
+user_id: debayanmitra
