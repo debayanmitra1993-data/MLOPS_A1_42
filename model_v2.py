@@ -44,8 +44,10 @@ def train_svm():
         'kernel': ['rbf', 'linear']
     }
     svm = SVC()
-    grid_search = GridSearchCV(estimator=svm, param_grid=param_grid,
-                                cv=5, verbose=2, n_jobs=-1)
+    grid_search = GridSearchCV(
+        estimator=svm, param_grid=param_grid,
+        cv=5, verbose=2, n_jobs=-1
+        )
     grid_search.fit(X_train, y_train)
     best_model = grid_search.best_estimator_
     joblib.dump(best_model, './models/best_svm_model.pkl')
@@ -65,8 +67,7 @@ def run_decision_tree_experiment():
 
         # Log parameters and metrics
         mlflow.log_param("model_type", "DecisionTreeClassifier")
-        mlflow.log_metric("mean_accuracy",
-                            decision_tree_evaluation["mean_accuracy"])
+        mlflow.log_metric("mean_accuracy",decision_tree_evaluation["mean_accuracy"])
         mlflow.sklearn.log_model(decision_tree_model, "model")
 
     return decision_tree_evaluation
