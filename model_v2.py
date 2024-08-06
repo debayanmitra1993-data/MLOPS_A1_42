@@ -10,6 +10,7 @@ from sklearn.datasets import load_iris
 iris = load_iris()
 X, y = iris.data, iris.target
 
+
 # Function to train a DecisionTreeClassifier
 def train_decision_tree():
     """Train a DecisionTreeClassifier on the dataset."""
@@ -17,6 +18,7 @@ def train_decision_tree():
     model.fit(X, y)
     joblib.dump(model, './models/decision_tree_model.pkl')
     return model
+
 
 # Function to evaluate a model using cross-validation
 def evaluate_model(model):
@@ -26,6 +28,7 @@ def evaluate_model(model):
         "scores": scores.tolist(),
         "mean_accuracy": scores.mean()
     }
+
 
 # Function to train an SVM using GridSearchCV
 def train_svm():
@@ -48,6 +51,7 @@ def train_svm():
     joblib.dump(best_model, './models/best_svm_model.pkl')
     return best_model
 
+
 # Function to run Decision Tree experiment
 def run_decision_tree_experiment():
     experiment_name = "MLflow DVC Integration Experiment"
@@ -65,6 +69,7 @@ def run_decision_tree_experiment():
         mlflow.sklearn.log_model(decision_tree_model, "model")
 
     return decision_tree_evaluation
+
 
 # Function to run SVM experiment
 def run_svm_experiment():
@@ -84,15 +89,18 @@ def run_svm_experiment():
 
     return svm_evaluation
 
+
 # Function to evaluate a saved DecisionTreeClassifier
 def evaluate_saved_decision_tree():
     model = joblib.load('./models/decision_tree_model.pkl')
     return evaluate_model(model)
 
+
 # Function to evaluate a saved SVM model
 def evaluate_saved_svm():
     model = joblib.load('./models/best_svm_model.pkl')
     return evaluate_model(model)
+
 
 if __name__ == '__main__':
     best_mdl_results = run_svm_experiment()

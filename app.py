@@ -4,12 +4,14 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import cross_val_score
 import numpy as np
 import joblib
-from model_v2 import run_svm_experiment
+
 
 app = Flask(__name__)
 
+
 # model = None
 model = joblib.load('./models/best_svm_model.pkl')
+
 
 def train_model():
     """Train a DecisionTreeClassifier on the Iris dataset."""
