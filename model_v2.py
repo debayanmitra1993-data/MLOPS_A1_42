@@ -1,7 +1,9 @@
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
-from sklearn.model_selection import cross_val_score, train_test_split, GridSearchCV
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
 import joblib
 import mlflow
 import mlflow.sklearn
@@ -36,13 +38,11 @@ def train_svm():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, )
     np.savetxt('./data_dvc/X_train.csv', X_train, delimiter=',', fmt='%d')
     np.savetxt('./data_dvc/y_train.csv', y_train, delimiter=',', fmt='%d')
-    
     param_grid = {
         'C': [0.1, 1, 10, 100],
         'gamma': [1, 0.1, 0.01, 0.001],
         'kernel': ['rbf', 'linear']
     }
-    
     svm = SVC()
     grid_search = GridSearchCV(estimator=svm, param_grid=param_grid, cv=5, verbose=2, n_jobs=-1)
     grid_search.fit(X_train, y_train)
@@ -65,7 +65,8 @@ def run_decision_tree_experiment():
 
         # Log parameters and metrics
         mlflow.log_param("model_type", "DecisionTreeClassifier")
-        mlflow.log_metric("mean_accuracy", decision_tree_evaluation["mean_accuracy"])
+        mlflow.log_metric("mean_accuracy", \
+            decision_tree_evaluation["mean_accuracy"])
         mlflow.sklearn.log_model(decision_tree_model, "model")
 
     return decision_tree_evaluation
@@ -104,4 +105,4 @@ def evaluate_saved_svm():
 
 if __name__ == '__main__':
     best_mdl_results = run_svm_experiment()
-    print("Best SVM Model results = ",best_mdl_results)
+    print("Best SVM Model results = ", best_mdl_results)
