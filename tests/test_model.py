@@ -1,9 +1,9 @@
 import sys
 import unittest
 import os
+from model_v2 import train_decision_tree
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from model_v2 import train_decision_tree
 
 
 class TestModel(unittest.TestCase):
