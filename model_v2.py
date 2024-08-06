@@ -68,7 +68,7 @@ def run_decision_tree_experiment():
         # Log parameters and metrics
         mlflow.log_param("model_type", "DecisionTreeClassifier")
         mlflow.log_metric(
-            "mean_accuracy", 
+            "mean_accuracy",
             decision_tree_evaluation["mean_accuracy"]
             )
         mlflow.sklearn.log_model(decision_tree_model, "model")
